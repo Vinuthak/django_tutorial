@@ -1,16 +1,13 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>All challenges</title>
-	</head>
-	<body>
+{% extends "base.html" %}
+  {% block page_title %}
+		All challenges
+  {% endblock %}
+
+  {% block content %}
 		<ul>
       {%for month in months%}
         <li><a href="{%url "month-challenge" month=month%}">{{month|title}}</li>
           {% comment %} month-challenge = name of the url set in urls.py, month is the argument in th eurl and month here is the month in for loop {% endcomment %}
       {%endfor%}
     </ul>
-	</body>
-</html>
+  {% endblock %}
